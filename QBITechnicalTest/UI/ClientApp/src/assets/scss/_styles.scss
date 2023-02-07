@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto';
+    color: var(--color-primary);
+    background-color: var(--color-light);
+}
+
+table {
+    width: 100%;
+    border: 1px solid var(--color-secondary);
+
+    tr {
+        th {
+            text-align: center;
+        }
+    
+        th, td {
+            padding: var(--padding-small);
+            border-right: 1px solid var(--color-secondary);
+        }
+    }
+}
+
+ul {
+    margin-left: 32px;
+
+    li {
+        list-style-type: disc;
+    }
+}
+
+qbi-developer-test-header + qbi-developer-test-content {
+    margin-top: var(--padding);
+}

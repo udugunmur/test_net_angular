@@ -1,0 +1,24 @@
+h2 {
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-secondary);
+    padding-bottom: var(--padding-small);
+    margin-bottom: var(--padding);
+}
+
+ul {
+    li {
+        + li {
+            margin-top: 4px;
+        }
+    }
+}
+
+section {
+    + section {
+        margin-top: var(--padding-big);
+    }
+}
+
+qbi-developer-test-task {
+    margin-top: var(--padding-big);
+}

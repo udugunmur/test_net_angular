@@ -1,0 +1,9 @@
+<span class="badge">{{ taskId }}</span>
+<div>
+    <ng-content></ng-content>
+</div>
+<a href="/assets/img/task_{{ taskId }}.png" target="_blank" *ngIf="hasImage">
+    <figure>
+        <img src="/assets/img/task_{{ taskId }}.png" />
+    </figure>
+</a>

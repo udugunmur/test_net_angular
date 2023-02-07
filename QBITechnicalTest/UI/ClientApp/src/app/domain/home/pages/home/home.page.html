@@ -1,0 +1,22 @@
+<qbi-developer-test-header>
+    <h1>Home</h1>
+</qbi-developer-test-header>
+<qbi-developer-test-content>
+    <section>
+        <h2>Hints</h2>
+        <ul>
+            <li>it's no mandatory to exactly replicate the styles from the images, but a close aproximation will be valuated.</li>
+            <li>You can find all the colors you must use under the _variables.scss file.</li>
+            <li>All your class name must have de prefix "QBIDeveloperTest".</li>
+            <li>The time to complete this test will be about 30-45 minutes.</li>
+            <li>A responsive design it's no mandatory.</li>
+            <li>All the models you need to use are already create on /src/app/core/models</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Instructions</h2>
+        <qbi-developer-test-task [taskId]="task.id" [hasImage]="task.hasImage" *ngFor="let task of tasks$ | async">
+            {{ task.description }}
+        </qbi-developer-test-task>
+    </section>
+</qbi-developer-test-content>

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1, 
+        "description": "Modifying \"menu.component.html\" and \"menu.component.scss\" files, create a side nav menu using the existing \"menus$\" observable. The menu items must be of a different color when the current page is the same of the menu item link (active link).",
+        "hasImage": true
+    },
+    {
+        "id": 2, 
+        "description": "Create a new folder under the existing \"domain\" folder called \"device\". Create the device module, its router module and a page with a header (using the custom header component) with the text \"Devices\". You may modify the global routing component to allow the navigation to the new page. Use the same folder structure that its already present in the project.",
+        "hasImage": true
+    },
+    {
+        "id": 3,
+        "description": "Make a table with the columns specified in the image. When there is no data an empty column with the text \"No data available\" and the size of all the columns should appear. Add styles to the table so that odd and even rows have different color.",
+        "hasImage": true
+    },
+    {
+        "id": 4,
+        "description": "Create a service for retrieve all the devices of any type, the service must extend QBIDeveloperTestAPIBase and call the backend API. Use the data from the service to fill the table. You can use POSTMAN to create devices.",
+        "hasImage": true
+    },
+    {
+        "id": 5,
+        "description": "Create a pipe to visually transform the values of the column \"name\", it must convert the name to uppercase, strip any number and replace any spaces between words with underscores.",
+        "hasImage": true
+    }
+]

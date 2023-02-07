@@ -1,0 +1,18 @@
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--side-menu-width);
+    background-color: var(--color-primary);
+    box-shadow: 0 0 8px var(--color-secondary);
+}
+
+main {
+    margin-left: var(--side-menu-width);
+
+    .main-container {
+        position: relative;
+        padding: var(--padding-big);
+    }
+}

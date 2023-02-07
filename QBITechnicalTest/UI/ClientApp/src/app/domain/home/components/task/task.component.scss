@@ -1,0 +1,53 @@
+:host {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: var(--padding);
+    background-color: var(--color-white);
+    border-radius: 4px;
+    box-shadow: 0 0 4px var(--color-secondary);
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    color: var(--color-light);
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+div {
+    width: 100%;
+}
+
+figure {
+    margin-left: var(--padding);
+    padding-left: var(--padding);
+    border-left: 1px dashed var(--color-secondary);
+    min-width: 120px;
+    max-width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        img {
+            opacity: 0.5;
+        }
+    }
+
+    img {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
