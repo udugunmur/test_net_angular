@@ -2,6 +2,7 @@
 using Core.Application;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Core.Data.Domain.TechnicalDbModel;
 using WebAPI.ViewModels;
 
 namespace WebAPI.Controllers

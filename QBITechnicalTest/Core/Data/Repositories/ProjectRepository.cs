@@ -1,5 +1,7 @@
 ﻿using Core.Data.Domain.TechnicalDbModel;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Data.Repositories
 {
@@ -22,7 +24,7 @@ namespace Core.Data.Repositories
 
         public IEnumerable<Project> GetProjects()
         {
-            return _dbContext.Set<Project>();
+            return _dbContext.Set<Project>().Include(r=> r.Country).ToList();
         }
     }
 }
