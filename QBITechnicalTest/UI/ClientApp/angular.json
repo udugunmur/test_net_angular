@@ -111,5 +111,8 @@
       }
     }
   },
-  "defaultProject": "FrontEndDeveloperTest"
+  "defaultProject": "FrontEndDeveloperTest",
+  "cli": {
+    "analytics": false
+  }
 }
