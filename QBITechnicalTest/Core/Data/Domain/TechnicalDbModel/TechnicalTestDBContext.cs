@@ -15,10 +15,20 @@ namespace Core.Data.Domain.TechnicalDbModel
 
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Currency> Currency { get; set; }
+        public virtual DbSet<DeviceLogical> DeviceLogical { get; set; }
+        public virtual DbSet<DeviceType> DeviceType { get; set; }
         public virtual DbSet<Project> Project { get; set; }
         public virtual DbSet<State> State { get; set; }
         public virtual DbSet<Tech> Tech { get; set; }
-        public virtual DbSet<DeviceType> DeviceType { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=app.autogen.ovh;Database=TechnicalTestDB;User Id=sa;Password=PasswordO1.;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -92,6 +102,67 @@ namespace Core.Data.Domain.TechnicalDbModel
                     .HasMaxLength(50);
 
                 entity.Property(e => e.CurrencySymbol).HasMaxLength(10);
+
+                entity.Property(e => e.Translations).IsUnicode(false);
+
+                entity.Property(e => e.UpdateDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.UpdateUserName)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasDefaultValueSql("('dba')");
+            });
+
+            modelBuilder.Entity<DeviceLogical>(entity =>
+            {
+                entity.Property(e => e.AssetCode)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DeviceLogicalName)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.UpdateDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.UpdateUserName)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasDefaultValueSql("('dba')");
+
+                entity.HasOne(d => d.DeviceType)
+                    .WithMany(p => p.DeviceLogical)
+                    .HasForeignKey(d => d.DeviceTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_dbo_DeviceLogical_DeviceTypeId");
+
+                entity.HasOne(d => d.Parent)
+                    .WithMany(p => p.InverseParent)
+                    .HasForeignKey(d => d.ParentId)
+                    .HasConstraintName("FK_dbo_DeviceLogical_ParentId");
+
+                entity.HasOne(d => d.Project)
+                    .WithMany(p => p.DeviceLogical)
+                    .HasForeignKey(d => d.ProjectId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_dbo_DeviceLogical_ProjectId");
+            });
+
+            modelBuilder.Entity<DeviceType>(entity =>
+            {
+                entity.ToTable("DeviceType", "master");
+
+                entity.HasIndex(e => e.DeviceTypeName)
+                    .HasName("UK_master_DeviceType_DeviceTypeName")
+                    .IsUnique();
+
+                entity.Property(e => e.DeviceTypeName)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Translations).IsUnicode(false);
 
@@ -206,11 +277,10 @@ namespace Core.Data.Domain.TechnicalDbModel
                     .HasMaxLength(100)
                     .HasDefaultValueSql("('dba')");
             });
-            
-            modelBuilder.Entity<DeviceType>(entity =>
-            {
-                entity.ToTable("DeviceType", "master");
-            });
+
+            OnModelCreatingPartial(modelBuilder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
