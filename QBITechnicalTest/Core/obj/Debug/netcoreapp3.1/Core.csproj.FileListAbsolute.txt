@@ -1,0 +1,13 @@
+C:\repos\test_net_angular\QBITechnicalTest\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+C:\repos\test_net_angular\QBITechnicalTest\Core\bin\Debug\netcoreapp3.1\Core.runtimeconfig.json
+C:\repos\test_net_angular\QBITechnicalTest\Core\bin\Debug\netcoreapp3.1\Core.runtimeconfig.dev.json
+C:\repos\test_net_angular\QBITechnicalTest\Core\bin\Debug\netcoreapp3.1\Core.dll
+C:\repos\test_net_angular\QBITechnicalTest\Core\bin\Debug\netcoreapp3.1\Core.pdb
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.csproj.AssemblyReference.cache
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.dll
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.pdb
+C:\repos\test_net_angular\QBITechnicalTest\Core\obj\Debug\netcoreapp3.1\Core.genruntimeconfig.cache

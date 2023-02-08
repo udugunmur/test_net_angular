@@ -24,7 +24,10 @@ namespace Core.Data.Repositories
 
         public IEnumerable<Project> GetProjects()
         {
-            return _dbContext.Set<Project>().Include(r=> r.Country).ToList();
+            return _dbContext.Set<Project>()
+                .Include(r=> r.Country)
+                .Include(r => r.State)
+                .Include(r => r.Tech).ToList();
         }
     }
 }

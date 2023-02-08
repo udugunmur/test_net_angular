@@ -9,7 +9,7 @@ namespace WebAPI.ViewModels
         public string ProjectName { get; set; }
 
         public CountryViewModel Country { get; set; }
-        public string State { get; set; }
-        public string Tech { get; set; }
+        public StateViewModel State { get; set; }
+        public TechViewModel Tech { get; set; }
     }
 }
