@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     useMocks: true,
-    apiUrl: 'https://localhost:44389'
+    apiUrl: 'https://net.autogen.ovh'
 };
 
 /*

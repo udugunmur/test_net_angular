@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { useMock } from '../decorators/use-mock.decorator';
-import { MenuItem } from '../models/menu-item.model';
 import { QBIDeveloperTestAPIBase } from './api.base';
+import {MenuItem} from "primeng/api";
 
 @Injectable({
     providedIn: 'root'

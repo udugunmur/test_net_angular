@@ -1,10 +1,12 @@
 [
-    {
-        "name": "Home",
-        "link": "/home"
-    },
-    {
-        "name": "Device",
-        "link": "/device"
-    }
+  {
+    "label": "Home",
+    "routerLink": ["/home"],
+    "routerLinkActiveOptions": { "exact": true }
+  },
+  {
+    "label": "Device",
+    "routerLink": ["/device"],
+    "routerLinkActiveOptions": { "exact": true }
+  }
 ]

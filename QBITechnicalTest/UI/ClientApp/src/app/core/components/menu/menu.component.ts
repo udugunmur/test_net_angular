@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MenuItem } from '../../models/menu-item.model';
 import { QBIDeveloperTestMenuService } from '../../services/menu.service';
+import {MenuItem} from "primeng/api";
 
 @Component({
     selector: 'qbi-developer-test-menu',
@@ -16,6 +16,6 @@ export class QBIDeveloperTestMenuComponent implements OnInit {
     ) { }
 
     async ngOnInit() {
-        this.menus$ = this.QBIDeveloperTestMenuService.getMenus();
+      this.menus$ = this.QBIDeveloperTestMenuService.getMenus();
     }
 }
