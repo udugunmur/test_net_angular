@@ -5,6 +5,8 @@
     "routerLinkActiveOptions": { "exact": true }
   },
   {
-    "label": "Device"
+    "label": "Device",
+    "routerLink": ["/device"],
+    "routerLinkActiveOptions": { "exact": true }
   }
 ]

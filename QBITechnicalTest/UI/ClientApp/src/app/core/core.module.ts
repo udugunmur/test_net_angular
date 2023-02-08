@@ -16,9 +16,10 @@ import {UIModule} from "../shared/ui.module/ui.module";
       UIModule,
     ],
     exports: [
-        QBIDeveloperTestMenuComponent,
-        QBIDeveloperTestHeaderComponent,
-        QBIDeveloperTestContentComponent
+      UIModule,
+      QBIDeveloperTestMenuComponent,
+      QBIDeveloperTestHeaderComponent,
+      QBIDeveloperTestContentComponent
     ]
 })
 export class QBIDeveloperTestCoreModule {
