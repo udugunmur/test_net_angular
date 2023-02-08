@@ -18,6 +18,7 @@ namespace Core.Data.Domain.TechnicalDbModel
         public virtual DbSet<Project> Project { get; set; }
         public virtual DbSet<State> State { get; set; }
         public virtual DbSet<Tech> Tech { get; set; }
+        public virtual DbSet<DeviceType> DeviceType { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -204,6 +205,11 @@ namespace Core.Data.Domain.TechnicalDbModel
                     .IsRequired()
                     .HasMaxLength(100)
                     .HasDefaultValueSql("('dba')");
+            });
+            
+            modelBuilder.Entity<DeviceType>(entity =>
+            {
+                entity.ToTable("DeviceType", "master");
             });
         }
     }
