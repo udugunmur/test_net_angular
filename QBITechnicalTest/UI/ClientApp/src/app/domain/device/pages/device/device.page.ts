@@ -1,16 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {from, Observable, tap} from 'rxjs';
+import {Observable} from 'rxjs';
 import {DeviceService} from "../../services/device.service";
-import {Product} from "../../../../core/models/product.model";
+import {DeviceTypeViewModel} from "../../../../core/models/device-type-view-model.model";
 
 @Component({
   templateUrl: 'device.page.html',
   styleUrls: ['device.page.scss']
 })
 export class DevicePage implements OnInit {
-  loading: boolean = false;
-  products: Product[] = [];
-  tasks$: Observable<Task[]> | undefined;
+  tasks$: Observable<DeviceTypeViewModel[]> | undefined;
 
   constructor(
     private readonly deviceService: DeviceService
@@ -18,14 +16,6 @@ export class DevicePage implements OnInit {
   }
 
   ngOnInit() {
-    from(this.deviceService.getProductsSmall()).pipe(
-      tap((_) => {
-        this.loading = true;
-      })
-    ).subscribe(data => {
-      // this.loading = false;
-      this.products = data;
-    });
-    // this.tasks$ = this.QBIDeveloperTestHomeService.getTasks();
+    this.tasks$ = this.deviceService.getDevice();
   }
 }
