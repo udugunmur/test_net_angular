@@ -1,3 +1,16 @@
 @import 'reset';
 @import 'variables';
 @import 'styles';
+
+.p-menu {
+  padding: 0rem 0;
+  background: #bebebe;
+  color: #495057;
+  border: 0px solid #dee2e6;
+  border-radius: 0px;
+  width: auto;
+}
+
+.p-menuitem-link-active {
+  background-color: #ebebeb;
+}

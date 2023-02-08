@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { QBIDeveloperTestAppRoutingModule } from './app-routing.module';
 import { QBIDeveloperTestAppComponent } from './app.component';
 import { QBIDeveloperTestCoreModule } from './core/core.module';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { QBIDeveloperTestCoreModule } from './core/core.module';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         RouterModule,
         QBIDeveloperTestAppRoutingModule,
         QBIDeveloperTestCoreModule

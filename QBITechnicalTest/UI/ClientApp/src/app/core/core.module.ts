@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { QBIDeveloperTestContentComponent } from './components/content/content.component';
 import { QBIDeveloperTestHeaderComponent } from './components/header/header.component';
 import { QBIDeveloperTestMenuComponent } from './components/menu/menu.component';
+import {BaseModule} from "../shared/base.module/base.module";
+import {UIModule} from "../shared/ui.module/ui.module";
 
 @NgModule({
     declarations: [
@@ -13,9 +12,8 @@ import { QBIDeveloperTestMenuComponent } from './components/menu/menu.component'
         QBIDeveloperTestContentComponent
     ],
     imports: [
-        CommonModule,
-        RouterModule,
-        HttpClientModule
+      BaseModule,
+      UIModule,
     ],
     exports: [
         QBIDeveloperTestMenuComponent,
