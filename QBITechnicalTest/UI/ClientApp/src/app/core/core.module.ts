@@ -4,23 +4,27 @@ import { QBIDeveloperTestHeaderComponent } from './components/header/header.comp
 import { QBIDeveloperTestMenuComponent } from './components/menu/menu.component';
 import {BaseModule} from "../shared/base.module/base.module";
 import {UIModule} from "../shared/ui.module/ui.module";
+import {TransformNamePipe} from "./pipes/transformName.pipe";
 
 @NgModule({
     declarations: [
         QBIDeveloperTestMenuComponent,
         QBIDeveloperTestHeaderComponent,
-        QBIDeveloperTestContentComponent
+        QBIDeveloperTestContentComponent,
+      TransformNamePipe
     ],
     imports: [
       BaseModule,
       UIModule,
     ],
-    exports: [
-      UIModule,
-      QBIDeveloperTestMenuComponent,
-      QBIDeveloperTestHeaderComponent,
-      QBIDeveloperTestContentComponent
-    ]
+  exports: [
+    BaseModule,
+    UIModule,
+    QBIDeveloperTestMenuComponent,
+    QBIDeveloperTestHeaderComponent,
+    QBIDeveloperTestContentComponent,
+    TransformNamePipe
+  ]
 })
 export class QBIDeveloperTestCoreModule {
 
